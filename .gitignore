@@ -1,0 +1,49 @@
+# --- Secrets: NEVER commit. Only .env.example is committed. ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- Local data generated at run time ---
+*.db
+*.sqlite
+*.sqlite3
+chroma/
+.chroma/
+vector_store/
+*.faiss
+*.index
+logs/
+*.log
+
+# --- Local traceability archives ("before" copies of code/design files) ---
+# Git history is the record on GitHub; these stay on your own machine.
+Archive_*/
+**/Archive_*/
+_to_delete/
+
+# --- Large or provided-by-course archives ---
+*.zip
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+
+# NOT ignored on purpose (submission items): results/<TeamID>/, knowledge_base/, templates/, seed_data/
