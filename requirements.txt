@@ -1,0 +1,51 @@
+# ITI122 WhatsApp Course Enquiry & Enrolment Assistant
+# Python 3.10+  ->  python -m venv .venv  &&  pip install -r requirements.txt
+# Versions are intentionally unpinned until the stack is decided (see DEVLOG D1-D4).
+# After the first working install, run `pip freeze > requirements.lock.txt` and pin here.
+
+# --- Web app: chat page on :8000, webhook, /admin/export, /admin/report ---
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+httpx
+
+# --- Typed data, config, validation ---
+pydantic
+python-dotenv
+jsonschema
+
+# --- Knowledge base (RAG): read the PDFs at run time ---
+pypdf
+# Retrieval: BM25 is implemented in app/rag/bm25.py (no extra package needed).
+
+# --- Documents: fill invoice/receipt/credit-note Excel templates ---
+openpyxl
+pillow               # images (payment screenshots, logo/stamp/signature)
+# PDF export of the filled templates needs LibreOffice installed on the machine (not a pip package).
+
+# --- Testing ---
+pytest
+
+# =====================================================================
+# UNDECIDED - uncomment ONE choice per group once decided, then log it in the DEVLOG.
+# =====================================================================
+
+# D1 Agent framework (guide: LangGraph/LangChain or CrewAI, as taught)
+# langgraph
+# langchain-core
+# crewai
+
+# D2 LLM provider (must support image input for screenshots)
+# anthropic
+# langchain-anthropic
+# openai
+# langchain-openai
+
+# D3 Embeddings / vector store (Anthropic has no embeddings API)
+# sentence-transformers   # free local embeddings
+# chromadb
+# faiss-cpu
+
+# D4 Database: SQLite ships with Python (sqlite3). Add an ORM only if the team wants one.
+# sqlalchemy
